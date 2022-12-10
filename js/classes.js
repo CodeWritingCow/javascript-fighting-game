@@ -1,25 +1,44 @@
 class Sprite {
-    constructor({ position, imageSrc, scale = 1 }) {
+    constructor({ position, imageSrc, scale = 1, framesMax = 1 }) {
         this.position = position;
         this.width = 50;
         this.height = 150;
         this.image = new Image();
         this.image.src = imageSrc;
         this.scale = scale;
+        this.framesMax = framesMax;
+        this.framesCurrent = 0;
+        this.framesElapsed = 0;
+        this.framesHold = 5; // Control animation speed by changing value of framesHold
     }
 
     draw() {
         c.drawImage(
             this.image,
+            // Crop animation spritesheet to individual frame size with these values
+            this.framesCurrent * (this.image.width / this.framesMax),
+            0,
+            this.image.width / this.framesMax,
+            this.image.height,
+            // End of cropping values
             this.position.x,
             this.position.y,
-            this.image.width * this.scale,
+            (this.image.width / this.framesMax) * this.scale,
             this.image.height * this.scale
         );
     }
 
     update() {
         this.draw();
+        // Logic for looping through animation spritesheet
+        this.framesElapsed++;
+        if (this.framesElapsed % this.framesHold === 0) {
+            if (this.framesCurrent < this.framesMax - 1) {
+                this.framesCurrent++;
+            } else {
+                this.framesCurrent = 0;
+            }
+        }
     }
 }
 
