@@ -1,15 +1,35 @@
+<head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+  </style>
+</head>
 <body>
     <!-- red container div -->
-    <div style="position: relative">
+    <div style="position: relative; display: inline-block">
         <!-- smaller red container div -->
-        <div style="position: absolute; display: flex; width: 100%">
+        <div
+            style="
+                position: absolute;
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding: 20px;
+            "
+        >
             <!-- player health -->
             <div
                 style="background-color: yellow; height: 30px; width: 100%"
             ></div>
             <!-- timer -->
             <div
-                style="background-color: red; width: 100px; height: 100px;"
+                style="
+                    background-color: red;
+                    width: 100px;
+                    height: 100px;
+                    flex-shrink: 0;
+                "
             ></div>
             <!-- enemy health -->
             <div
