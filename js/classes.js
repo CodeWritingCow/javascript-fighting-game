@@ -124,12 +124,13 @@ class Fighter extends Sprite {
         this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
         // TODO: Remove code showing attackBox. attackBox is currently shown for dev purpose only.
-        c.fillRect(
-            this.attackBox.position.x,
-            this.attackBox.position.y,
-            this.attackBox.width,
-            this.attackBox.height
-        ); // END OF TODO
+        // c.fillRect(
+        //     this.attackBox.position.x,
+        //     this.attackBox.position.y,
+        //     this.attackBox.width,
+        //     this.attackBox.height
+        // );
+        // END OF TODO
 
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
