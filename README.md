@@ -1,5 +1,4 @@
-
-
+<img width="765" alt="fighting game screenshot" src="https://user-images.githubusercontent.com/7751862/207155301-4ed5b011-8bc1-47a4-9a65-a40500d75661.png">
 
 # JavaScript Fighting Game
 This repository contains the source code for a JavaScript fighintg game based on a YouTube tutorial by Chris Courses.
