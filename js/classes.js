@@ -101,22 +101,6 @@ class Fighter extends Sprite {
         }
     }
 
-    // draw() {
-    //     c.fillStyle = this.color;
-    //     c.fillRect(this.position.x, this.position.y, this.width, this.height);
-
-    //     // attack box
-    //     if (this.isAttacking) {
-    //         c.fillStyle = 'green';
-    //         c.fillRect(
-    //             this.attackBox.position.x,
-    //             this.attackBox.position.y,
-    //             this.attackBox.width,
-    //             this.attackBox.height
-    //         );
-    //     }
-    // }
-
     update() {
         this.draw();
 
@@ -127,14 +111,14 @@ class Fighter extends Sprite {
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
         this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
-        // TODO: Remove code showing attackBox. attackBox is currently shown for dev purpose only.
+        // Uncomment code to show attackBox. For dev purpose only.
+        // c.fillStyle = 'green';
         // c.fillRect(
         //     this.attackBox.position.x,
         //     this.attackBox.position.y,
         //     this.attackBox.width,
         //     this.attackBox.height
         // );
-        // END OF TODO
 
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
@@ -153,9 +137,6 @@ class Fighter extends Sprite {
     attack() {
         this.switchSprite('attack1');
         this.isAttacking = true;
-        // setTimeout(() => {
-        //     this.isAttacking = false;
-        // }, 100);
     }
 
     takeHit() {
